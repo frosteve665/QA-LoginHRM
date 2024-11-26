@@ -83,5 +83,23 @@ context('Network Request Tests', () => {
     LoginPage.submit();
     cy.wait('@actionSummary').its('response.statusCode').should('eq', 200); // Verifikasi status kode respons
   });
+  context('Responsive Design Tests', () => {
+    const viewports = [
+        { name: 'mobile', width: 375, height: 667 },
+        { name: 'tablet', width: 768, height: 1024 },
+        { name: 'desktop', width: 1280, height: 800 },
+    ];
+
+    viewports.forEach((viewport) => {
+        it(`should display the login page correctly on ${viewport.name}`, () => {
+            cy.viewport(viewport.width, viewport.height);
+            LoginPage.visit();
+            LoginPage.verifyLogoVisible();
+            LoginPage.verifyUsernameFieldVisible();
+            LoginPage.verifyPasswordFieldVisible();
+            LoginPage.verifyLoginButtonVisible();
+        });
+    });
+});
 });
 });
