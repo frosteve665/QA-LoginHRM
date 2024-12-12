@@ -1,5 +1,5 @@
 # Cypress E2E Testing for OrangeHRM
-- This repository contains end-to-end (E2E) tests for the OrangeHRM application using Cypress. The tests are organized using the Page Object Model (POM) to ensure maintainability and readability.
+This repository contains end-to-end (E2E) tests for the OrangeHRM application using Cypress. The tests are organized using the Page Object Model (POM) to ensure maintainability and readability.
 
 # Project Structure
 cypress/integration: Contains the test specifications.
